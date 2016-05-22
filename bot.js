@@ -48,14 +48,11 @@ function getRedTweets(){
 
 	function censorship(textToCensor){
 		for (i=0;i<bannedStuff.length-1;i++){
-			if (textToCensor.search(bannedStuff[i]) > 0){
+			if (textToCensor.search(bannedStuff[i]) >= 0){
 				return false;
-			} else if (!textToCensor.search(/@/g)){
-				return false;
-			} else {
-				return true;
 			}
 		}
+		return true;
 	}
 
 	function gotData(err, data, response){
