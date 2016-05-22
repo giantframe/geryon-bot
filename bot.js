@@ -3,10 +3,10 @@ console.log("the bot is red!");
 var Twit = require('twit');
 
 var T = new Twit({
-	consumer_key:         'vrHTivEjyo5sc3jcizb5b80Od',
-	consumer_secret:      'tvWqNoxi6XAafasHFYDfUJcNlx4RaZkB8aphdlBsRzuwS3v6o4',
-	access_token:         '708789907695804417-A5H4uvs4F66MKCO5VuGOn62OYLw2brU',
-	access_token_secret:  'mN7wjmaCpcfVZsScEfWkt2Pw0eBMIOWyetarnThXQHO6D',
+	consumer_key:         process.env.TWIT_CONSUMER_KEY,
+	consumer_secret:      process.env.TWIT_CONSUMER_SECRET,
+	access_token:         process.env.TWIT_ACCESS_TOKEN,
+	access_token_secret:  process.env.TWIT_ACCESS_TOKEN_SECRET,
   timeout_ms:           60*1000,  // optional HTTP request timeout to apply to all requests.
 })
 
