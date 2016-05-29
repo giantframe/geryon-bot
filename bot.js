@@ -22,15 +22,20 @@ var bannedStuff = [
 	/\u0040/g,
 	/@/g,
 	/rt/g,
+	/carpet/g,
+	/velvet/g,
+	/bitch/g,
+	/fuck/g,
+	/nigger/g
 	];
 
 var punctRE = /[\u2000-\u206F\u2E00-\u2E7F\u0E00-\u0E7F\\'!"#$%&()*+,\-.\/:;<=>?\[\]^_`{|}~]/g;
 var redCouplets = [];
 
 getRedTweets();
-setInterval(getRedTweets, 1000*60*60);
+setInterval(getRedTweets, 1000*60*180);
 
-setInterval(postRedTweets, 1000*60*10);
+setInterval(postRedTweets, 1000*60*30);
 
 
 function getRedTweets(){
@@ -70,7 +75,7 @@ function getRedTweets(){
 			//SPLIT THE TWEET INTO AN ARRAY OF WORDS
 			fullTweet = data.statuses[i].text.split(" ");
 
-			//FIND THE WORD RED 
+			//FIND THE WORD RED
 			redPos = fullTweet.findIndex(findRed);
 			endPos = (fullTweet.length - 1);
 
@@ -98,11 +103,11 @@ function getRedTweets(){
 				//MAKE THE STRING
 
 				redString = partTweet.join(" ").replace(punctRE, "").toLowerCase();
-				
+
 				//ADD TO COUPLET-MAKING ARRAY
 
 				redSingleLinesUnfiltered.push(redString);
-				
+
 				console.log("spliced: " + redString);
 			}
 
