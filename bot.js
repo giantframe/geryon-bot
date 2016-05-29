@@ -24,8 +24,9 @@ var bannedStuff = [
 	/rt/g,
 	/carpet/g,
 	/velvet/g,
+
+	//geryon would not say these things:
 	/bitch/g,
-	/fuck/g,
 	/nigger/g
 	];
 
